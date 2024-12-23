@@ -1,0 +1,18 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "postCreateCommand",
+  "onCreateCommand": "python -m pip install uv",
+  "updateContentCommand": "uv venv; uv pip install langflow",
+  "portsAttributes": {
+    "7860": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": {
+    "server": "uv run langflow run"
+  }
+}
