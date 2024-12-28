@@ -1,9 +1,6 @@
 {
-	"name": "My langflow",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": ".."
-	},
+  "name": "My langflow",
+  "image": "langflowai/langflow",
   "hostRequirements": {
     "cpus": 4
   },
@@ -13,7 +10,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postAttachCommand": {
-    "server": "uv run langflow run"
-  }
+  "overrideCommand": false
 }
